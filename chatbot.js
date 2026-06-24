@@ -160,22 +160,202 @@
         status: "Assistant Les Montagnettes · En ligne",
         greeting: "Bonjour ! Je suis l’assistant Les Montagnettes. Je peux vous conseiller, préparer une demande de séjour ou vous orienter vers notre équipe.",
         placeholder: "Écrivez votre demande...",
+        launcher: "Besoin d’aide ?",
         services: ["Disponibilités", "Questions fréquentes", "Spa & restaurant", "Check-in mobile", "Parler à l’équipe"],
-        concierge: ["Votre séjour", "La conciergerie"]
+        concierge: ["Votre séjour", "La conciergerie"],
+        cancel: "Annuler",
+        selection: "Votre sélection",
+        loading: "J’analyse votre demande...",
+        resultTitle: "Voici ce que j’ai compris :",
+        controlNote: "Vous pouvez modifier ces critères avant de continuer.",
+        actions: {
+          restart: "Recommencer",
+          edit: "Modifier",
+          view: "Voir les hébergements"
+        },
+        privacy: {
+          text: "Assistant Les Montagnettes · Ne partagez pas de données sensibles.",
+          link: "Confidentialité"
+        },
+        guide: {
+          persona: { question: "Pour quel type de séjour ?" },
+          room: { question: "Quel hébergement préférez-vous ?" },
+          destination: { question: "Quel hôtel souhaitez-vous découvrir ?" },
+          moment: { question: "Quand se déroule le séjour ?" },
+          priorities: { question: "Qu’est-ce qui compte le plus ?", help: "Plusieurs choix possibles", continue: "Voir ma sélection" }
+        },
+        guideChoices: {
+          persona: {
+            business: { text: "💼 Business", label: "Déplacement professionnel" },
+            couple: { text: "♡ Couple", label: "Séjour en couple" },
+            senior: { text: "♜ Retraité actif", label: "Séjour confortable pour retraité actif" },
+            family: { text: "⌂ Famille", label: "Séjour en famille" }
+          },
+          room: {
+            hotel: { text: "Chambre d’hôtel", label: "une chambre d’hôtel" },
+            apartment: { text: "Appartement", label: "un appartement" },
+            residence: { text: "Résidence", label: "une résidence hôtelière" },
+            chalet: { text: "Chalet", label: "un chalet" }
+          },
+          destination: {
+            "villa-caroline": { text: "La Villa Caroline", label: "à La Villa Caroline" },
+            "parc-victoria": { text: "Parc Victoria", label: "au Parc Victoria, Pays basque" },
+            "excelsior-chamonix": { text: "Hôtel Excelsior", label: "à l’Hôtel Excelsior, Chamonix" },
+            flexible: { text: "Me conseiller", label: "dans l’hôtel le plus adapté" }
+          },
+          moment: {
+            weekday: { text: "En semaine · Loisirs", label: "en semaine, pour un séjour loisirs" },
+            weekend: { text: "Week-end · Business", label: "le week-end, pour un séjour business" }
+          }
+        },
+        priorities: {
+          parking: "Parking",
+          wifi: "Wi-Fi",
+          spa: "Spa",
+          ski: "Proche des pistes",
+          breakfast: "Petit-déjeuner",
+          view: "Vue montagne",
+          kids: "Adapté aux enfants",
+          invoice: "Facture entreprise"
+        },
+        specialLabels: {
+          weekdayLeisure: "Séjour loisirs en semaine",
+          weekendBusiness: "Séjour business le week-end"
+        }
       },
       en: {
         status: "Les Montagnettes assistant · Online",
         greeting: "Hello! I’m Les Montagnettes’ assistant. I can recommend a stay, prepare a booking request or connect you with our team.",
         placeholder: "Write your request...",
+        launcher: "Need help?",
         services: ["Availability", "Frequently asked questions", "Spa & restaurant", "Mobile check-in", "Speak to our team"],
-        concierge: ["Your stay", "Concierge"]
+        concierge: ["Your stay", "Concierge"],
+        cancel: "Remove",
+        selection: "Your selection",
+        loading: "I’m reviewing your request...",
+        resultTitle: "Here is what I understood:",
+        controlNote: "You can adjust these criteria before continuing.",
+        actions: {
+          restart: "Start again",
+          edit: "Edit",
+          view: "View stays"
+        },
+        privacy: {
+          text: "Les Montagnettes assistant · Do not share sensitive data.",
+          link: "Privacy"
+        },
+        guide: {
+          persona: { question: "What type of stay are you planning?" },
+          room: { question: "What accommodation would you prefer?" },
+          destination: { question: "Which hotel would you like to discover?" },
+          moment: { question: "When will the stay take place?" },
+          priorities: { question: "What matters most?", help: "Several choices possible", continue: "View my selection" }
+        },
+        guideChoices: {
+          persona: {
+            business: { text: "💼 Business", label: "Business trip" },
+            couple: { text: "♡ Couple", label: "Couple stay" },
+            senior: { text: "♜ Active senior", label: "Comfortable active senior stay" },
+            family: { text: "⌂ Family", label: "Family stay" }
+          },
+          room: {
+            hotel: { text: "Hotel room", label: "a hotel room" },
+            apartment: { text: "Apartment", label: "an apartment" },
+            residence: { text: "Residence", label: "a serviced residence" },
+            chalet: { text: "Chalet", label: "a chalet" }
+          },
+          destination: {
+            "villa-caroline": { text: "La Villa Caroline", label: "at La Villa Caroline" },
+            "parc-victoria": { text: "Parc Victoria", label: "at Parc Victoria, Basque Country" },
+            "excelsior-chamonix": { text: "Hôtel Excelsior", label: "at Hôtel Excelsior, Chamonix" },
+            flexible: { text: "Advise me", label: "in the most suitable hotel" }
+          },
+          moment: {
+            weekday: { text: "Weekday · Leisure", label: "during the week, for a leisure stay" },
+            weekend: { text: "Weekend · Business", label: "at the weekend, for a business stay" }
+          }
+        },
+        priorities: {
+          parking: "Parking",
+          wifi: "Wi-Fi",
+          spa: "Spa",
+          ski: "Near the slopes",
+          breakfast: "Breakfast",
+          view: "Mountain view",
+          kids: "Child-friendly",
+          invoice: "Company invoice"
+        },
+        specialLabels: {
+          weekdayLeisure: "Leisure stay during the week",
+          weekendBusiness: "Business stay at the weekend"
+        }
       },
       es: {
         status: "Asistente Les Montagnettes · En línea",
         greeting: "¡Hola! Soy el asistente de Les Montagnettes. Puedo recomendarle una estancia, preparar una solicitud o ponerle en contacto con nuestro equipo.",
         placeholder: "Escriba su solicitud...",
+        launcher: "¿Necesita ayuda?",
         services: ["Disponibilidad", "Preguntas frecuentes", "Spa y restaurante", "Check-in móvil", "Hablar con el equipo"],
-        concierge: ["Su estancia", "Conserjería"]
+        concierge: ["Su estancia", "Conserjería"],
+        cancel: "Quitar",
+        selection: "Su selección",
+        loading: "Estoy revisando su solicitud...",
+        resultTitle: "Esto es lo que he entendido:",
+        controlNote: "Puede modificar estos criterios antes de continuar.",
+        actions: {
+          restart: "Empezar de nuevo",
+          edit: "Modificar",
+          view: "Ver alojamientos"
+        },
+        privacy: {
+          text: "Asistente Les Montagnettes · No comparta datos sensibles.",
+          link: "Privacidad"
+        },
+        guide: {
+          persona: { question: "¿Qué tipo de estancia busca?" },
+          room: { question: "¿Qué alojamiento prefiere?" },
+          destination: { question: "¿Qué hotel desea descubrir?" },
+          moment: { question: "¿Cuándo será la estancia?" },
+          priorities: { question: "¿Qué es lo más importante?", help: "Puede elegir varias opciones", continue: "Ver mi selección" }
+        },
+        guideChoices: {
+          persona: {
+            business: { text: "💼 Negocios", label: "Viaje de negocios" },
+            couple: { text: "♡ Pareja", label: "Estancia en pareja" },
+            senior: { text: "♜ Jubilado activo", label: "Estancia cómoda para jubilado activo" },
+            family: { text: "⌂ Familia", label: "Estancia en familia" }
+          },
+          room: {
+            hotel: { text: "Habitación de hotel", label: "una habitación de hotel" },
+            apartment: { text: "Apartamento", label: "un apartamento" },
+            residence: { text: "Residencia", label: "una residencia hotelera" },
+            chalet: { text: "Chalet", label: "un chalet" }
+          },
+          destination: {
+            "villa-caroline": { text: "La Villa Caroline", label: "en La Villa Caroline" },
+            "parc-victoria": { text: "Parc Victoria", label: "en Parc Victoria, País Vasco" },
+            "excelsior-chamonix": { text: "Hôtel Excelsior", label: "en Hôtel Excelsior, Chamonix" },
+            flexible: { text: "Aconséjeme", label: "en el hotel más adecuado" }
+          },
+          moment: {
+            weekday: { text: "Entre semana · Ocio", label: "entre semana, para una estancia de ocio" },
+            weekend: { text: "Fin de semana · Negocios", label: "el fin de semana, para una estancia de negocios" }
+          }
+        },
+        priorities: {
+          parking: "Parking",
+          wifi: "Wi-Fi",
+          spa: "Spa",
+          ski: "Cerca de las pistas",
+          breakfast: "Desayuno",
+          view: "Vista a la montaña",
+          kids: "Adaptado a niños",
+          invoice: "Factura de empresa"
+        },
+        specialLabels: {
+          weekdayLeisure: "Estancia de ocio entre semana",
+          weekendBusiness: "Estancia de negocios el fin de semana"
+        }
       }
     };
 
@@ -185,12 +365,55 @@
       status.innerHTML = "<i></i> " + copy.status;
       root.querySelector(".mai-chat-body .mai-bubble-bot").textContent = copy.greeting;
       input.placeholder = copy.placeholder;
+      root.querySelector(".mai-launcher-text").textContent = copy.launcher;
       root.querySelectorAll("[data-service]").forEach(function (button, index) {
         button.textContent = copy.services[index];
       });
+      root.querySelectorAll(".mai-guide-step").forEach(function (step) {
+        var stepCopy = copy.guide[step.dataset.step];
+        if (!stepCopy) return;
+        var question = step.querySelector(".mai-guide-question");
+        var help = step.querySelector(".mai-guide-help");
+        if (question) question.textContent = stepCopy.question;
+        if (help && stepCopy.help) help.textContent = stepCopy.help;
+      });
+      root.querySelectorAll("[data-guide]").forEach(function (button) {
+        var item = copy.guideChoices[button.dataset.guide] &&
+          copy.guideChoices[button.dataset.guide][button.dataset.value];
+        if (!item) return;
+        button.textContent = item.text;
+        button.dataset.label = item.label;
+      });
+      root.querySelectorAll("[data-priority]").forEach(function (button) {
+        button.textContent = copy.priorities[button.dataset.priority] || button.textContent;
+      });
+      root.querySelector(".mai-guide-continue").textContent = copy.guide.priorities.continue;
+      root.querySelector(".mai-selection-summary > span").textContent = copy.selection;
+      root.querySelector(".mai-loading p").textContent = copy.loading;
+      root.querySelector(".mai-result-title").textContent = copy.resultTitle;
+      root.querySelector(".mai-control-note").textContent = copy.controlNote;
+      root.querySelector(".mai-restart").textContent = copy.actions.restart;
+      root.querySelector(".mai-edit").textContent = copy.actions.edit;
+      root.querySelector(".mai-view").textContent = copy.actions.view;
+      root.querySelector(".mai-privacy").innerHTML =
+        copy.privacy.text + ' <a class="mai-privacy-link" href="' +
+        (root.dataset.privacyUrl || "/politique-de-confidentialite/") +
+        '">' + copy.privacy.link + "</a>";
       if (conciergeLink) {
         conciergeLink.innerHTML =
           "<span>" + copy.concierge[0] + "</span>" + copy.concierge[1];
+      }
+      if (choices) {
+        ["persona", "room", "destination", "moment"].forEach(function (type) {
+          if (choices[type]) {
+            var choiceCopy = copy.guideChoices[type][choices[type].value];
+            if (choiceCopy) choices[type].label = choiceCopy.label;
+          }
+        });
+        choices.priorities = Array.from(root.querySelectorAll("[data-priority].is-selected")).map(function (button) {
+          return button.textContent.trim();
+        });
+        renderSelection();
       }
     }
 

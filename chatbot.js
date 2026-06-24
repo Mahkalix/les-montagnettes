@@ -145,7 +145,9 @@
     root.dataset.language = "fr";
     var conciergeUrl = root.dataset.conciergeUrl || "conciergerie-client.html";
     var absoluteConciergeUrl = new URL(conciergeUrl, window.location.href).href;
-    conciergeLink.href = conciergeUrl;
+    if (conciergeLink) {
+      conciergeLink.href = conciergeUrl;
+    }
     if (conciergeQrLink && conciergeQrImage) {
       conciergeQrLink.href = conciergeUrl;
       conciergeQrImage.src =
@@ -186,8 +188,10 @@
       root.querySelectorAll("[data-service]").forEach(function (button, index) {
         button.textContent = copy.services[index];
       });
-      conciergeLink.innerHTML =
-        "<span>" + copy.concierge[0] + "</span>" + copy.concierge[1];
+      if (conciergeLink) {
+        conciergeLink.innerHTML =
+          "<span>" + copy.concierge[0] + "</span>" + copy.concierge[1];
+      }
     }
 
     language.addEventListener("change", function () {

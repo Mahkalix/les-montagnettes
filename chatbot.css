@@ -295,42 +295,11 @@ body {
     cursor: pointer;
   }
 
-  .montagnettes-ai-module .mai-page-concierge-link {
+  .montagnettes-ai-module .mai-concierge-qr {
     position: fixed;
     z-index: 99980;
     right: 28px;
     bottom: 28px;
-    min-width: 176px;
-    display: grid;
-    gap: 3px;
-    padding: 15px 19px;
-    color: var(--mai-pine);
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(78, 0, 0, 0.18);
-    box-shadow: 0 14px 38px rgba(45, 0, 0, 0.14);
-    font: 400 17px "Italiana", Georgia, serif;
-    text-decoration: none;
-    backdrop-filter: blur(8px);
-    transition: transform .2s ease, background .2s ease;
-  }
-
-  .montagnettes-ai-module .mai-page-concierge-link span {
-    color: var(--mai-khaki);
-    text-transform: uppercase;
-    letter-spacing: .16em;
-    font: 600 7px "DM Sans", Arial, sans-serif;
-  }
-
-  .montagnettes-ai-module .mai-page-concierge-link:hover {
-    background: var(--mai-cream);
-    transform: translateY(-2px);
-  }
-
-  .montagnettes-ai-module .mai-concierge-qr {
-    position: fixed;
-    z-index: 99979;
-    top: 118px;
-    right: 28px;
     width: min(340px, calc(100vw - 56px));
     display: grid;
     grid-template-columns: 1fr auto;
@@ -1440,16 +1409,22 @@ body {
       height: min(610px, calc(100vh - 100px));
     }
 
-    .montagnettes-ai-module .mai-page-concierge-link {
+    .montagnettes-ai-module .mai-concierge-qr {
       right: 12px;
       bottom: 12px;
-      min-width: 150px;
-      padding: 12px 15px;
-      font-size: 15px;
+      width: auto;
+      grid-template-columns: auto;
+      gap: 0;
+      padding: 8px;
     }
 
-    .montagnettes-ai-module .mai-concierge-qr {
+    .montagnettes-ai-module .mai-concierge-qr-copy {
       display: none;
+    }
+
+    .montagnettes-ai-module .mai-concierge-qr-img {
+      width: 84px;
+      height: 84px;
     }
 
     .montagnettes-ai-module .mai-concierge {

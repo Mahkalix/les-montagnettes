@@ -2,13 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
 
 :root {
-  --mai-bordeaux: #4e0000;
-  --mai-bordeaux-light: #650d0d;
-  --mai-ivory: #ece6d8;
-  --mai-beige: #d9c4b1;
-  --mai-khaki: #a39670;
+  --mai-bordeaux: #4E0000;
+  --mai-bordeaux-light: #641114;
+  --mai-ivory: #FAF8F4;
+  --mai-beige: #D9C4B1;
+  --mai-khaki: #D9C4B1;
   --mai-olive: #4d4828;
+  --mai-blue: #13273F;
   --mai-white: #ffffff;
+  --mai-sans: "Cabinet Grotesk", "DM Sans", Arial, sans-serif;
+  --mai-display: "The New Elegance", "Italiana", Georgia, serif;
 }
 
 html,
@@ -16,7 +19,7 @@ body {
   min-height: 100%;
   margin: 0;
   background:
-    linear-gradient(rgba(23, 16, 12, 0.16), rgba(23, 16, 12, 0.16)),
+    linear-gradient(rgba(19, 39, 63, 0.18), rgba(78, 0, 0, 0.18)),
     url("assets/hero.jpg") center / cover fixed no-repeat;
 }
 
@@ -24,14 +27,14 @@ body {
 .preview-error {
   margin: 40px;
   color: var(--mai-bordeaux);
-  font-family: Arial, sans-serif;
+  font-family: var(--mai-sans);
 }
 
   body:has(> .montagnettes-ai-module) {
     min-height: 100vh;
     margin: 0;
     background:
-      linear-gradient(rgba(23, 16, 12, 0.16), rgba(23, 16, 12, 0.16)),
+      linear-gradient(rgba(19, 39, 63, 0.18), rgba(78, 0, 0, 0.18)),
       url("assets/hero.jpg") center / cover fixed no-repeat;
   }
 
@@ -39,18 +42,18 @@ body {
     --mai-pine: var(--mai-bordeaux);
     --mai-pine-light: var(--mai-bordeaux-light);
     --mai-cream: var(--mai-ivory);
-    --mai-ink: var(--mai-olive);
-    --mai-muted: #766f55;
-    --mai-line: rgba(78, 0, 0, 0.13);
+    --mai-ink: var(--mai-blue);
+    --mai-muted: rgba(19, 39, 63, 0.68);
+    --mai-line: rgba(78, 0, 0, 0.14);
     --mai-gold: var(--mai-khaki);
     --mai-gold-light: var(--mai-beige);
     width: 100%;
     padding: clamp(22px, 4vw, 42px);
     color: var(--mai-ink);
-    background: #ffffff;
-    border: 1px solid rgba(78, 0, 0, 0.08);
-    box-shadow: 0 24px 70px rgba(8, 24, 18, 0.18);
-    font-family: "DM Sans", Arial, sans-serif;
+    background: var(--mai-ivory);
+    border: 1px solid rgba(78, 0, 0, 0.11);
+    box-shadow: 0 24px 70px rgba(19, 39, 63, 0.18);
+    font-family: var(--mai-sans);
     box-sizing: border-box;
   }
 
@@ -94,7 +97,7 @@ body {
 
   .montagnettes-ai-module .mai-title {
     margin: 0;
-    font-family: "Italiana", Georgia, serif;
+    font-family: var(--mai-display);
     font-size: clamp(27px, 4vw, 42px);
     font-weight: 400;
     line-height: 1.1;
@@ -307,11 +310,9 @@ body {
     gap: 18px;
     padding: 18px;
     color: var(--mai-pine);
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 230, 216, 0.86)),
-      #ffffff;
-    border: 1px solid rgba(78, 0, 0, 0.15);
-    box-shadow: 0 24px 60px rgba(45, 0, 0, 0.13);
+    background: rgba(250, 248, 244, 0.94);
+    border: 1px solid rgba(78, 0, 0, 0.22);
+    box-shadow: 0 24px 60px rgba(19, 39, 63, 0.18);
     backdrop-filter: blur(10px);
   }
 
@@ -321,21 +322,21 @@ body {
   }
 
   .montagnettes-ai-module .mai-concierge-qr-copy span {
-    color: var(--mai-khaki);
+    color: var(--mai-olive);
     text-transform: uppercase;
     letter-spacing: .16em;
-    font: 600 8px "DM Sans", Arial, sans-serif;
+    font: 600 8px var(--mai-sans);
   }
 
   .montagnettes-ai-module .mai-concierge-qr-copy strong {
     color: var(--mai-pine);
-    font: 400 22px "Italiana", Georgia, serif;
-    line-height: 1;
+    font: 400 24px var(--mai-display);
+    line-height: 0.98;
   }
 
   .montagnettes-ai-module .mai-concierge-qr-copy p {
     margin: 0;
-    color: rgba(77, 72, 40, 0.78);
+    color: rgba(19, 39, 63, 0.72);
     font-size: 11px;
     line-height: 1.45;
   }
@@ -343,9 +344,9 @@ body {
   .montagnettes-ai-module .mai-concierge-qr-link {
     display: grid;
     place-items: center;
-    padding: 7px;
+    padding: 8px;
     background: #ffffff;
-    border: 1px solid rgba(78, 0, 0, 0.14);
+    border: 1px solid rgba(78, 0, 0, 0.2);
   }
 
   .montagnettes-ai-module .mai-concierge-qr-img {
@@ -371,7 +372,7 @@ body {
   .montagnettes-ai-module .mai-guide-question {
     margin: 0 0 10px;
     color: var(--mai-pine);
-    font-family: "Italiana", Georgia, serif;
+    font-family: var(--mai-display);
     font-size: 16px;
     font-weight: 400;
   }
@@ -467,7 +468,7 @@ body {
   .montagnettes-ai-module .mai-result-heading h3,
   .montagnettes-ai-module .mai-dialog h3 {
     margin: 0;
-    font-family: "Italiana", Georgia, serif;
+    font-family: var(--mai-display);
     font-size: 27px;
     font-weight: 400;
     line-height: 1.2;
@@ -728,19 +729,17 @@ body {
     display: flex;
     align-items: center;
     width: auto;
-    height: 64px;
-    min-height: 64px;
+    height: 62px;
+    min-height: 62px;
     justify-content: center;
     gap: 11px;
-    padding: 6px 19px 6px 6px;
+    padding: 6px 20px 6px 7px;
     color: var(--mai-pine);
-    background:
-      linear-gradient(115deg, rgba(255, 255, 255, 0.48), transparent 42%),
-      #ffffff;
-    border: 1px solid rgba(78, 0, 0, 0.18);
-    border-radius: 34px;
+    background: rgba(250, 248, 244, 0.96);
+    border: 1px solid rgba(78, 0, 0, 0.24);
+    border-radius: 2px;
     box-shadow:
-      0 14px 38px rgba(45, 0, 0, 0.15),
+      0 14px 38px rgba(19, 39, 63, 0.18),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -762,15 +761,15 @@ body {
   }
 
   .montagnettes-ai-module .mai-launcher-person {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     display: grid;
     place-items: center;
     color: var(--mai-pine);
-    background: #fbf8f2;
+    background: var(--mai-bordeaux);
     border: 1px solid rgba(78, 0, 0, 0.22);
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 3px rgba(236, 230, 216, 0.8);
+    border-radius: 1px;
+    box-shadow: none;
   }
 
   .montagnettes-ai-module .mai-launcher-person svg {
@@ -786,12 +785,13 @@ body {
     width: 58%;
     height: auto;
     display: block;
+    filter: brightness(0) invert(1);
   }
 
   .montagnettes-ai-module .mai-launcher-text {
     color: var(--mai-pine);
-    font-family: "Italiana", Georgia, serif;
-    font-size: 15px;
+    font-family: var(--mai-display);
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -807,13 +807,11 @@ body {
     grid-template-rows: auto 1fr auto;
     overflow: hidden;
     color: var(--mai-ink);
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.72), transparent 200px),
-      #ffffff;
-    border: 1px solid rgba(78, 0, 0, 0.14);
-    border-radius: 3px;
+    background: var(--mai-ivory);
+    border: 1px solid rgba(78, 0, 0, 0.22);
+    border-radius: 1px;
     box-shadow:
-      0 35px 90px rgba(45, 0, 0, 0.16),
+      0 35px 90px rgba(19, 39, 63, 0.23),
       0 0 0 1px rgba(255, 255, 255, 0.56) inset;
     transform-origin: bottom left;
     animation: mai-chat-open 0.24s ease both;
@@ -834,10 +832,8 @@ body {
     gap: 12px;
     padding: 15px 18px;
     color: var(--mai-ink);
-    background:
-      linear-gradient(120deg, rgba(255, 255, 255, 0.7), transparent 42%),
-      #ffffff;
-    border-bottom: 1px solid rgba(78, 0, 0, 0.13);
+    background: var(--mai-ivory);
+    border-bottom: 1px solid rgba(78, 0, 0, 0.2);
   }
 
   .montagnettes-ai-module .mai-avatar,
@@ -847,14 +843,14 @@ body {
     flex: 0 0 auto;
     color: var(--mai-pine);
     background: var(--mai-cream);
-    border-radius: 50%;
+    border-radius: 1px;
   }
 
   .montagnettes-ai-module .mai-avatar {
     width: 46px;
     height: 46px;
     color: var(--mai-pine);
-    background: #fbf8f2;
+    background: var(--mai-bordeaux);
     border: 1px solid rgba(78, 0, 0, 0.28);
   }
 
@@ -865,7 +861,7 @@ body {
   }
 
   .montagnettes-ai-module .mai-chat-header strong {
-    font-family: "Italiana", Georgia, serif;
+    font-family: var(--mai-display);
     color: var(--mai-pine);
     font-size: 17px;
     font-weight: 400;
@@ -897,7 +893,7 @@ body {
     background: transparent;
     border: 1px solid rgba(78, 0, 0, 0.12);
     border-radius: 50%;
-    font-family: Arial, sans-serif;
+    font-family: var(--mai-sans);
     font-size: 22px;
     line-height: 1;
     cursor: pointer;
@@ -913,7 +909,7 @@ body {
     border: 1px solid rgba(78, 0, 0, 0.14);
     border-radius: 16px;
     outline: 0;
-    font: 600 9px "DM Sans", Arial, sans-serif;
+    font: 600 9px var(--mai-sans);
     cursor: pointer;
   }
 
@@ -1115,7 +1111,7 @@ body {
   .montagnettes-ai-module .mai-dynamic-question {
     margin: 0 0 9px;
     color: var(--mai-pine);
-    font-family: "Italiana", Georgia, serif;
+    font-family: var(--mai-display);
     font-size: 14px;
   }
 
@@ -1197,7 +1193,7 @@ body {
     color: var(--mai-pine);
     border: 1px solid rgba(78, 0, 0, 0.24);
     border-radius: 50%;
-    font: 400 21px "Italiana", Georgia, serif;
+    font: 400 21px var(--mai-display);
   }
 
   .montagnettes-ai-module .mai-concierge-head small {
@@ -1210,7 +1206,7 @@ body {
   .montagnettes-ai-module .mai-concierge-head h2 {
     margin: 2px 0 0;
     color: var(--mai-pine);
-    font: 400 22px "Italiana", Georgia, serif;
+    font: 400 22px var(--mai-display);
   }
 
   .montagnettes-ai-module .mai-concierge-intro {
@@ -1297,7 +1293,7 @@ body {
   .montagnettes-ai-module .mai-concierge-cart > p {
     margin: 0 0 8px;
     color: var(--mai-pine);
-    font: 400 13px "Italiana", Georgia, serif;
+    font: 400 13px var(--mai-display);
   }
 
   .montagnettes-ai-module .mai-cart-items {
@@ -1327,7 +1323,7 @@ body {
   .montagnettes-ai-module .mai-email-tool > p {
     margin: 0 0 10px;
     color: var(--mai-pine);
-    font: 400 15px "Italiana", Georgia, serif;
+    font: 400 15px var(--mai-display);
   }
 
   .montagnettes-ai-module .mai-email-fields {

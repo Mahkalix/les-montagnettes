@@ -140,7 +140,7 @@
 
     if (!status || !toggle || !form || !input) return;
 
-    status.innerHTML = "<i></i> Assistant IA · En ligne";
+    status.innerHTML = "<i></i> Assistant Les Montagnettes · En ligne";
     root.classList.add("is-ready");
     root.dataset.language = "fr";
     var conciergeUrl = root.dataset.conciergeUrl || "conciergerie-client.html";
@@ -155,22 +155,22 @@
 
     var translations = {
       fr: {
-        status: "Assistant IA · En ligne",
-        greeting: "Bonjour ! Je suis l’assistant IA des Montagnettes. Je peux vous conseiller, préparer une demande de séjour ou vous orienter vers notre équipe.",
+        status: "Assistant Les Montagnettes · En ligne",
+        greeting: "Bonjour ! Je suis l’assistant Les Montagnettes. Je peux vous conseiller, préparer une demande de séjour ou vous orienter vers notre équipe.",
         placeholder: "Écrivez votre demande...",
         services: ["Disponibilités", "Questions fréquentes", "Spa & restaurant", "Check-in mobile", "Parler à l’équipe"],
         concierge: ["Votre séjour", "La conciergerie"]
       },
       en: {
-        status: "AI assistant · Online",
-        greeting: "Hello! I’m Les Montagnettes’ AI assistant. I can recommend a stay, prepare a booking request or connect you with our team.",
+        status: "Les Montagnettes assistant · Online",
+        greeting: "Hello! I’m Les Montagnettes’ assistant. I can recommend a stay, prepare a booking request or connect you with our team.",
         placeholder: "Write your request...",
         services: ["Availability", "Frequently asked questions", "Spa & restaurant", "Mobile check-in", "Speak to our team"],
         concierge: ["Your stay", "Concierge"]
       },
       es: {
-        status: "Asistente IA · En línea",
-        greeting: "¡Hola! Soy el asistente de IA de Les Montagnettes. Puedo recomendarle una estancia, preparar una solicitud o ponerle en contacto con nuestro equipo.",
+        status: "Asistente Les Montagnettes · En línea",
+        greeting: "¡Hola! Soy el asistente de Les Montagnettes. Puedo recomendarle una estancia, preparar una solicitud o ponerle en contacto con nuestro equipo.",
         placeholder: "Escriba su solicitud...",
         services: ["Disponibilidad", "Preguntas frecuentes", "Spa y restaurante", "Check-in móvil", "Hablar con el equipo"],
         concierge: ["Su estancia", "Conserjería"]

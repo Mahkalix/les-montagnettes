@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Les Montagnettes - Analyse IA
- * Description: Endpoint REST sécurisé pour le module IA Elementor.
+ * Plugin Name: Les Montagnettes - Analyse de séjour
+ * Description: Endpoint REST sécurisé pour le module Elementor Les Montagnettes.
  * Version: 1.0.0
  */
 

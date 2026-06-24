@@ -1,4 +1,4 @@
-# Module IA — WordPress Elementor
+# Les Montagnettes — WordPress Elementor
 
 Le module utilise uniquement du HTML, du CSS et du JavaScript natif. Il ne
 nécessite ni React, ni Sass, ni compilation.
@@ -12,7 +12,7 @@ Le CSS et le JavaScript sont séparés :
 
 - `chatbot.css` : styles et variables de couleur
 - `chatbot.js` : interactions du chatbot, QR code et multilingue
-- `assets/logomontagnettes.svg` : logo utilisé dans le bouton IA
+- `assets/logomontagnettes.svg` : logo utilisé dans le bouton d’assistance
 
 ## Installation directe dans Elementor
 
@@ -51,7 +51,7 @@ forcément depuis une page Elementor située à une autre adresse.
 Le widget apparaît sous forme d'un bouton flottant en bas à gauche. Le visiteur
 clique sur le personnage pour ouvrir ou réduire la fenêtre de conversation.
 
-## Activer la véritable IA
+## Activer le moteur intelligent côté serveur
 
 1. Installer `wordpress-ai-endpoint.php` comme extension WordPress ou mu-plugin.
 2. Ajouter la clé côté serveur dans `wp-config.php` :
@@ -77,7 +77,7 @@ est indisponible, le module repasse automatiquement sur son moteur local.
 - Recommandations de séjour et conciergerie
 - Mise en avant du spa et du restaurant
 - Passage explicite à un membre de l'équipe
-- Mention visible qu'il s'agit d'un assistant IA
+- Mention visible qu'il s'agit d'un assistant Les Montagnettes
 - Rappel de ne pas transmettre de données sensibles
 
 ## Module interne pour l'équipe
@@ -119,7 +119,7 @@ PMS ou au moteur de réservation de l'hôtel. Le module ne les invente pas.
 connexion API au PMS est souhaitée directement dans la conversation, elle doit
 être ajoutée côté serveur WordPress avec les accès techniques du fournisseur.
 
-La distribution via les moteurs IA demande en complément des pages
+La distribution via les moteurs de recherche conversationnels demande en complément des pages
 d'hébergement à jour, des données structurées Schema.org, des tarifs
 accessibles et un moteur de réservation techniquement interrogeable.
 
@@ -131,7 +131,7 @@ accessibles et un moteur de réservation techniquement interrogeable.
 - Hôtel Excelsior, nouvel établissement à Chamonix : clientèles française,
   anglaise et asiatique
 - Activité privilégiée : loisirs en semaine, business le week-end
-- Thématique : innovation du secteur hôtelier par l'intégration de l'IA
+- Thématique : innovation du secteur hôtelier par l'intégration d’assistants intelligents
   marketing
 
 Toutes les règles sont isolées sous `.montagnettes-ai-module` pour limiter les
@@ -145,8 +145,8 @@ Si le dossier n'est pas encore lié à GitHub :
 gh auth login
 git init -b main
 git add .
-git commit -m "Ajout du module IA et de la conciergerie"
-gh repo create les-montagnettes-ia --public --source=. --remote=origin --push
+git commit -m "Ajout du module Les Montagnettes et de la conciergerie"
+gh repo create les-montagnettes --public --source=. --remote=origin --push
 gh pages deploy . --branch gh-pages
 ```
 

@@ -1,0 +1,312 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
+
+:root {
+  --journey-bordeaux: #4E0000;
+  --journey-ivory: #FAF8F4;
+  --journey-beige: #D9C4B1;
+  --journey-olive: #4D4828;
+  --journey-blue: #13273F;
+  --journey-line: rgba(78, 0, 0, 0.16);
+  --journey-muted: rgba(19, 39, 63, 0.68);
+  --journey-sans: "Cabinet Grotesk", "DM Sans", Arial, sans-serif;
+  --journey-display: "The New Elegance", "Italiana", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  min-height: 100%;
+  background: var(--journey-ivory);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--journey-blue);
+  background:
+    linear-gradient(rgba(19, 39, 63, 0.22), rgba(78, 0, 0, 0.22)),
+    url("assets/hero.jpg") center / cover fixed no-repeat;
+  font-family: var(--journey-sans);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.stay-journey {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 430px) minmax(260px, 0.75fr);
+  gap: clamp(18px, 3vw, 42px);
+  align-items: center;
+  padding: clamp(18px, 4vw, 58px);
+}
+
+.journey-intro,
+.journey-panel,
+.phone-frame {
+  background: rgba(250, 248, 244, 0.94);
+  border: 1px solid var(--journey-line);
+  box-shadow: 0 28px 80px rgba(19, 39, 63, 0.22);
+}
+
+.journey-intro,
+.journey-panel {
+  padding: clamp(22px, 3vw, 36px);
+}
+
+.journey-back {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--journey-bordeaux);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.journey-kicker {
+  margin: 0 0 10px;
+  color: var(--journey-olive);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.journey-intro h1,
+.journey-panel h2 {
+  margin: 0;
+  color: var(--journey-bordeaux);
+  font: 400 clamp(42px, 6vw, 74px) / .98 var(--journey-display);
+}
+
+.journey-panel h2 {
+  font-size: clamp(34px, 4vw, 52px);
+}
+
+.journey-intro p:not(.journey-kicker),
+.journey-panel li {
+  color: var(--journey-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.journey-panel ul {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding-left: 18px;
+}
+
+.phone-frame {
+  width: min(430px, 100%);
+  min-height: min(780px, calc(100vh - 48px));
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  overflow: hidden;
+}
+
+.phone-header {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--journey-ivory);
+  border-bottom: 1px solid var(--journey-line);
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--journey-bordeaux);
+}
+
+.brand-mark img {
+  width: 60%;
+  filter: brightness(0) invert(1);
+}
+
+.phone-header div:last-child {
+  display: grid;
+  gap: 3px;
+}
+
+.phone-header strong {
+  color: var(--journey-bordeaux);
+  font: 400 22px var(--journey-display);
+}
+
+.phone-header span {
+  color: var(--journey-muted);
+  font-size: 11px;
+}
+
+.journey-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--journey-line);
+}
+
+.journey-tabs button {
+  min-height: 42px;
+  color: var(--journey-bordeaux);
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--journey-line);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.journey-tabs button:last-child {
+  border-right: 0;
+}
+
+.journey-tabs button.is-active {
+  color: var(--journey-ivory);
+  background: var(--journey-bordeaux);
+}
+
+.chat-screen {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  padding: 18px 16px 24px;
+  background:
+    linear-gradient(rgba(250, 248, 244, 0.86), rgba(250, 248, 244, 0.86)),
+    linear-gradient(135deg, rgba(217, 196, 177, 0.38), rgba(255,255,255,0));
+}
+
+.day-separator {
+  align-self: center;
+  padding: 5px 9px;
+  color: var(--journey-muted);
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(78, 0, 0, 0.1);
+  font-size: 10px;
+}
+
+.message {
+  max-width: 84%;
+  display: grid;
+  gap: 8px;
+  padding: 12px 13px;
+  border: 1px solid rgba(78, 0, 0, 0.12);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.message.hotel {
+  align-self: flex-start;
+  color: var(--journey-blue);
+  background: #fff;
+}
+
+.message.client {
+  align-self: flex-end;
+  color: var(--journey-ivory);
+  background: var(--journey-blue);
+  border-color: var(--journey-blue);
+}
+
+.message strong {
+  color: var(--journey-bordeaux);
+  font-size: 12px;
+}
+
+.message.client strong {
+  color: var(--journey-ivory);
+}
+
+.message-time {
+  color: rgba(19, 39, 63, 0.5);
+  font-size: 10px;
+}
+
+.message.client .message-time {
+  color: rgba(250, 248, 244, 0.68);
+}
+
+.message-actions {
+  display: grid;
+  gap: 7px;
+}
+
+.message-actions button,
+.next-message {
+  min-height: 34px;
+  padding: 0 12px;
+  color: var(--journey-bordeaux);
+  background: transparent;
+  border: 1px solid rgba(78, 0, 0, 0.28);
+  text-align: left;
+  cursor: pointer;
+}
+
+.message-actions button:hover,
+.next-message:hover {
+  color: var(--journey-ivory);
+  background: var(--journey-bordeaux);
+}
+
+.phone-compose {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+  background: var(--journey-ivory);
+  border-top: 1px solid var(--journey-line);
+}
+
+.phone-compose span {
+  color: var(--journey-muted);
+  font-size: 11px;
+}
+
+.next-message {
+  min-height: 38px;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .stay-journey {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .phone-frame {
+    margin: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .stay-journey {
+    padding: 0;
+    gap: 0;
+  }
+
+  .journey-intro,
+  .journey-panel {
+    box-shadow: none;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .phone-frame {
+    width: 100%;
+    min-height: 100vh;
+    box-shadow: none;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .journey-intro h1 {
+    font-size: 44px;
+  }
+}

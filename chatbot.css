@@ -355,6 +355,41 @@ body {
     display: block;
   }
 
+  .montagnettes-ai-module .mai-journey-link {
+    position: fixed;
+    z-index: 99979;
+    right: 28px;
+    bottom: 178px;
+    width: min(340px, calc(100vw - 56px));
+    display: grid;
+    gap: 4px;
+    padding: 15px 18px;
+    color: var(--mai-pine);
+    background: rgba(250, 248, 244, 0.94);
+    border: 1px solid rgba(78, 0, 0, 0.22);
+    box-shadow: 0 20px 56px rgba(19, 39, 63, 0.16);
+    font: 400 23px var(--mai-display);
+    line-height: 1;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+  }
+
+  .montagnettes-ai-module .mai-journey-link span {
+    color: var(--mai-olive);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font: 600 8px var(--mai-sans);
+  }
+
+  .montagnettes-ai-module .mai-journey-link:hover {
+    color: var(--mai-ivory);
+    background: var(--mai-pine);
+  }
+
+  .montagnettes-ai-module .mai-journey-link:hover span {
+    color: var(--mai-beige);
+  }
+
   .montagnettes-ai-module .mai-services button:hover {
     background: #e2d5c3;
     border-color: var(--mai-gold);
@@ -1421,6 +1456,18 @@ body {
     .montagnettes-ai-module .mai-concierge-qr-img {
       width: 84px;
       height: 84px;
+    }
+
+    .montagnettes-ai-module .mai-journey-link {
+      right: 12px;
+      bottom: 114px;
+      width: auto;
+      padding: 10px 12px;
+      font-size: 16px;
+    }
+
+    .montagnettes-ai-module .mai-journey-link span {
+      display: none;
     }
 
     .montagnettes-ai-module .mai-concierge {

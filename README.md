@@ -112,6 +112,18 @@ Le QR code est généré côté navigateur via `chatbot.js`. Si vous souhaitez u
 code 100 % hébergé en local, remplacez l'image générée par un fichier SVG/PNG
 statique dans `assets/`.
 
+## Parcours client mobile
+
+La page suivante simule les messages reçus par le client pendant son séjour :
+
+```text
+parcours-client.html
+```
+
+Elle illustre une logique non intrusive : maximum 1 SMS ou email par jour, à une
+heure confortable, avec check-in mobile avant arrivée, suggestions spa/restaurant
+pendant le séjour, puis message J+5 avec lien vers un avis Google.
+
 Les disponibilités, tarifs et réservations réels nécessitent une connexion au
 PMS ou au moteur de réservation de l'hôtel. Le module ne les invente pas.
 

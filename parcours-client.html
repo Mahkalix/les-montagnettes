@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FAF8F4" />
+    <title>Parcours client — Les Montagnettes</title>
+    <link rel="stylesheet" href="parcours-client.css" />
+    <script src="parcours-client.js" defer></script>
+  </head>
+  <body>
+    <main class="stay-journey">
+      <section class="journey-intro">
+        <a class="journey-back" href="index.html">← Accueil</a>
+        <p class="journey-kicker">Parcours client</p>
+        <h1>Messages de séjour côté client.</h1>
+        <p>
+          Prototype mobile : le client reçoit des messages utiles tout au long
+          de son séjour, avec une règle simple : maximum un SMS ou email par
+          jour, envoyé à une heure confortable.
+        </p>
+      </section>
+
+      <section class="phone-frame" aria-label="Simulation de messagerie client">
+        <header class="phone-header">
+          <div class="brand-mark">
+            <img src="assets/logomontagnettes.svg" alt="" />
+          </div>
+          <div>
+            <strong>Les Montagnettes</strong>
+            <span>Service séjour · en ligne</span>
+          </div>
+        </header>
+
+        <div class="journey-tabs" aria-label="Moments du séjour">
+          <button class="is-active" type="button" data-step="before">Avant</button>
+          <button type="button" data-step="arrival">Arrivée</button>
+          <button type="button" data-step="stay">Séjour</button>
+          <button type="button" data-step="review">J+5</button>
+        </div>
+
+        <div class="chat-screen" aria-live="polite"></div>
+
+        <footer class="phone-compose">
+          <span>1 message maximum par jour · 10h–18h</span>
+          <button type="button" class="next-message">Voir la suite</button>
+        </footer>
+      </section>
+
+      <aside class="journey-panel">
+        <p class="journey-kicker">Objectif hôtel</p>
+        <h2>Check-in mobile & vente incitative dynamique</h2>
+        <ul>
+          <li>Maximum 1 SMS ou email par jour, jamais tôt le matin ni tard le soir.</li>
+          <li>Check-in mobile envoyé avant l’arrivée.</li>
+          <li>Réduire l’attente à l’arrivée.</li>
+          <li>Proposer le bon service au bon moment.</li>
+          <li>Envoyer un lien d’avis Google 5 jours après le départ.</li>
+        </ul>
+      </aside>
+    </main>
+  </body>
+</html>

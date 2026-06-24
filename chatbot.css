@@ -1,0 +1,1469 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap");
+
+:root {
+  --mai-bordeaux: #4e0000;
+  --mai-bordeaux-light: #650d0d;
+  --mai-ivory: #ece6d8;
+  --mai-beige: #d9c4b1;
+  --mai-khaki: #a39670;
+  --mai-olive: #4d4828;
+  --mai-white: #ffffff;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    linear-gradient(rgba(23, 16, 12, 0.16), rgba(23, 16, 12, 0.16)),
+    url("assets/hotel-alpin-hero.png") center / cover fixed no-repeat;
+}
+
+.preview-loading,
+.preview-error {
+  margin: 40px;
+  color: var(--mai-bordeaux);
+  font-family: Arial, sans-serif;
+}
+
+  body:has(> .montagnettes-ai-module) {
+    min-height: 100vh;
+    margin: 0;
+    background:
+      linear-gradient(rgba(23, 16, 12, 0.16), rgba(23, 16, 12, 0.16)),
+      url("assets/hotel-alpin-hero.png") center / cover fixed no-repeat;
+  }
+
+  .montagnettes-ai-module {
+    --mai-pine: var(--mai-bordeaux);
+    --mai-pine-light: var(--mai-bordeaux-light);
+    --mai-cream: var(--mai-ivory);
+    --mai-ink: var(--mai-olive);
+    --mai-muted: #766f55;
+    --mai-line: rgba(78, 0, 0, 0.13);
+    --mai-gold: var(--mai-khaki);
+    --mai-gold-light: var(--mai-beige);
+    width: 100%;
+    padding: clamp(22px, 4vw, 42px);
+    color: var(--mai-ink);
+    background: #ffffff;
+    border: 1px solid rgba(78, 0, 0, 0.08);
+    box-shadow: 0 24px 70px rgba(8, 24, 18, 0.18);
+    font-family: "DM Sans", Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .montagnettes-ai-module *,
+  .montagnettes-ai-module *::before,
+  .montagnettes-ai-module *::after {
+    box-sizing: border-box;
+  }
+
+  .montagnettes-ai-module button,
+  .montagnettes-ai-module textarea {
+    font: inherit;
+  }
+
+  .montagnettes-ai-module .mai-head,
+  .montagnettes-ai-module .mai-result-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .montagnettes-ai-module .mai-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    display: grid;
+    place-items: center;
+    color: var(--mai-white);
+    background: var(--mai-pine);
+    border-radius: 50%;
+  }
+
+  .montagnettes-ai-module .mai-eyebrow {
+    margin: 0 0 4px;
+    color: var(--mai-pine-light);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .montagnettes-ai-module .mai-title {
+    margin: 0;
+    font-family: "Italiana", Georgia, serif;
+    font-size: clamp(27px, 4vw, 42px);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .montagnettes-ai-module .mai-intro {
+    max-width: 680px;
+    margin: 18px 0 22px;
+    color: var(--mai-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .montagnettes-ai-module .mai-input-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .montagnettes-ai-module .mai-context-switch {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0 0 15px;
+    padding: 4px;
+    background: rgba(78, 0, 0, 0.06);
+  }
+
+  .montagnettes-ai-module .mai-context-switch button {
+    min-height: 36px;
+    padding: 0 13px;
+    color: var(--mai-muted);
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    font-size: 11px;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-context-switch button.is-active {
+    color: var(--mai-white);
+    background: var(--mai-pine);
+  }
+
+  .montagnettes-ai-module .mai-input {
+    width: 100%;
+    min-height: 62px;
+    resize: vertical;
+    padding: 17px 18px;
+    color: var(--mai-ink);
+    background: var(--mai-white);
+    border: 1px solid var(--mai-line);
+    border-radius: 0;
+    outline: 0;
+    line-height: 1.45;
+  }
+
+  .montagnettes-ai-module .mai-input:focus {
+    border-color: var(--mai-pine);
+    box-shadow: 0 0 0 3px rgba(78, 0, 0, 0.09);
+  }
+
+  .montagnettes-ai-module .mai-submit,
+  .montagnettes-ai-module .mai-view,
+  .montagnettes-ai-module .mai-apply {
+    min-height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 0 20px;
+    color: var(--mai-white);
+    background: var(--mai-pine);
+    border: 1px solid var(--mai-pine);
+    border-radius: 0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .montagnettes-ai-module .mai-submit:hover,
+  .montagnettes-ai-module .mai-view:hover,
+  .montagnettes-ai-module .mai-apply:hover {
+    color: var(--mai-white);
+    background: var(--mai-pine-light);
+    transform: translateY(-1px);
+  }
+
+  .montagnettes-ai-module .mai-submit svg,
+  .montagnettes-ai-module .mai-view svg {
+    width: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+  }
+
+  .montagnettes-ai-module .mai-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-top: 13px;
+  }
+
+  .montagnettes-ai-module .mai-suggestions > span {
+    margin-right: 2px;
+    color: var(--mai-muted);
+    font-size: 10px;
+  }
+
+  .montagnettes-ai-module .mai-suggestions button {
+    padding: 7px 10px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid rgba(78, 0, 0, 0.22);
+    border-radius: 0;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-suggestions button:hover {
+    color: var(--mai-white);
+    background: var(--mai-pine);
+  }
+
+  .montagnettes-ai-module .mai-guide {
+    width: calc(100% - 35px);
+    margin: 13px 0 0 35px;
+  }
+
+  .montagnettes-ai-module .mai-selection-summary {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.52);
+    border-left: 2px solid var(--mai-gold);
+  }
+
+  .montagnettes-ai-module .mai-selection-summary[hidden] {
+    display: none;
+  }
+
+  .montagnettes-ai-module .mai-selection-summary > span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--mai-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 7px;
+  }
+
+  .montagnettes-ai-module .mai-selection-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .montagnettes-ai-module .mai-selection-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 27px;
+    padding: 0 5px 0 9px;
+    color: var(--mai-pine);
+    background: var(--mai-cream);
+    border: 1px solid rgba(78, 0, 0, 0.13);
+    border-radius: 14px;
+    font-size: 8px;
+  }
+
+  .montagnettes-ai-module .mai-selection-chip button {
+    width: 19px;
+    height: 19px;
+    display: grid;
+    place-items: center;
+    padding: 0 0 2px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 14px 0 0 35px;
+  }
+
+  .montagnettes-ai-module .mai-services button {
+    min-height: 31px;
+    padding: 0 10px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid rgba(78, 0, 0, 0.16);
+    border-radius: 16px;
+    font-size: 9px;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-page-concierge-link {
+    position: fixed;
+    z-index: 99980;
+    right: 28px;
+    bottom: 28px;
+    min-width: 176px;
+    display: grid;
+    gap: 3px;
+    padding: 15px 19px;
+    color: var(--mai-pine);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(78, 0, 0, 0.18);
+    box-shadow: 0 14px 38px rgba(45, 0, 0, 0.14);
+    font: 400 17px "Italiana", Georgia, serif;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: transform .2s ease, background .2s ease;
+  }
+
+  .montagnettes-ai-module .mai-page-concierge-link span {
+    color: var(--mai-khaki);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font: 600 7px "DM Sans", Arial, sans-serif;
+  }
+
+  .montagnettes-ai-module .mai-page-concierge-link:hover {
+    background: var(--mai-cream);
+    transform: translateY(-2px);
+  }
+
+  .montagnettes-ai-module .mai-concierge-qr {
+    position: fixed;
+    z-index: 99979;
+    top: 118px;
+    right: 28px;
+    width: min(340px, calc(100vw - 56px));
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+    color: var(--mai-pine);
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 230, 216, 0.86)),
+      #ffffff;
+    border: 1px solid rgba(78, 0, 0, 0.15);
+    box-shadow: 0 24px 60px rgba(45, 0, 0, 0.13);
+    backdrop-filter: blur(10px);
+  }
+
+  .montagnettes-ai-module .mai-concierge-qr-copy {
+    display: grid;
+    gap: 5px;
+  }
+
+  .montagnettes-ai-module .mai-concierge-qr-copy span {
+    color: var(--mai-khaki);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font: 600 8px "DM Sans", Arial, sans-serif;
+  }
+
+  .montagnettes-ai-module .mai-concierge-qr-copy strong {
+    color: var(--mai-pine);
+    font: 400 22px "Italiana", Georgia, serif;
+    line-height: 1;
+  }
+
+  .montagnettes-ai-module .mai-concierge-qr-copy p {
+    margin: 0;
+    color: rgba(77, 72, 40, 0.78);
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .montagnettes-ai-module .mai-concierge-qr-link {
+    display: grid;
+    place-items: center;
+    padding: 7px;
+    background: #ffffff;
+    border: 1px solid rgba(78, 0, 0, 0.14);
+  }
+
+  .montagnettes-ai-module .mai-concierge-qr-img {
+    width: 108px;
+    height: 108px;
+    display: block;
+  }
+
+  .montagnettes-ai-module .mai-services button:hover {
+    background: #e2d5c3;
+    border-color: var(--mai-gold);
+  }
+
+  .montagnettes-ai-module .mai-guide-step {
+    display: none;
+    animation: mai-elementor-in 0.25s both;
+  }
+
+  .montagnettes-ai-module .mai-guide-step.is-active {
+    display: block;
+  }
+
+  .montagnettes-ai-module .mai-guide-question {
+    margin: 0 0 10px;
+    color: var(--mai-pine);
+    font-family: "Italiana", Georgia, serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .montagnettes-ai-module .mai-guide-help {
+    margin: -4px 0 8px;
+    color: var(--mai-muted);
+    font-size: 9px;
+  }
+
+  .montagnettes-ai-module .mai-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .montagnettes-ai-module .mai-choice-grid button {
+    position: relative;
+    min-height: 44px;
+    padding: 8px 10px;
+    color: var(--mai-pine);
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(78, 0, 0, 0.15);
+    border-radius: 20px;
+    font-size: 10px;
+    line-height: 1.25;
+    cursor: pointer;
+    box-shadow: none;
+    transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .montagnettes-ai-module .mai-choice-grid button:hover,
+  .montagnettes-ai-module .mai-choice-grid button.is-selected {
+    color: var(--mai-pine);
+    background: #e2d5c3;
+    border-color: var(--mai-gold);
+    transform: translateY(-1px);
+  }
+
+  .montagnettes-ai-module .mai-guide-continue {
+    width: 100%;
+    min-height: 45px;
+    margin-top: 10px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid var(--mai-pine);
+    border-radius: 22px;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-loading {
+    min-height: 145px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 12px;
+    margin-top: 22px;
+    border-top: 1px solid var(--mai-line);
+  }
+
+  .montagnettes-ai-module .mai-loading[hidden],
+  .montagnettes-ai-module .mai-results[hidden] {
+    display: none;
+  }
+
+  .montagnettes-ai-module .mai-loading p {
+    margin: 0;
+    color: var(--mai-muted);
+    font-size: 13px;
+  }
+
+  .montagnettes-ai-module .mai-spinner {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ccd8d0;
+    border-top-color: var(--mai-pine);
+    border-radius: 50%;
+    animation: mai-elementor-spin 0.8s linear infinite;
+  }
+
+  @keyframes mai-elementor-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .montagnettes-ai-module .mai-results {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--mai-line);
+  }
+
+  .montagnettes-ai-module .mai-result-heading h3,
+  .montagnettes-ai-module .mai-dialog h3 {
+    margin: 0;
+    font-family: "Italiana", Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .montagnettes-ai-module .mai-criteria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 21px 0 14px;
+  }
+
+  .montagnettes-ai-module .mai-persona {
+    margin: 20px 0 0;
+    padding: 15px 17px;
+    background: rgba(163, 150, 112, 0.13);
+    border-left: 2px solid var(--mai-gold);
+  }
+
+  .montagnettes-ai-module .mai-persona-label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--mai-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 9px;
+  }
+
+  .montagnettes-ai-module .mai-persona-name {
+    color: var(--mai-pine);
+    font-size: 14px;
+  }
+
+  .montagnettes-ai-module .mai-persona-summary {
+    margin: 5px 0 0;
+    color: var(--mai-muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .montagnettes-ai-module .mai-criterion {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 13px;
+    color: var(--mai-pine);
+    background: #ece6d8;
+    border: 1px solid rgba(163, 150, 112, 0.48);
+    font-size: 13px;
+    animation: mai-elementor-in 0.35s both;
+  }
+
+  .montagnettes-ai-module .mai-criterion::before {
+    content: "✓";
+    color: var(--mai-gold);
+    font-weight: 600;
+  }
+
+  @keyframes mai-elementor-in {
+    from { opacity: 0; transform: translateY(6px); }
+  }
+
+  .montagnettes-ai-module .mai-control-note,
+  .montagnettes-ai-module .mai-dialog-copy {
+    margin: 0 0 19px;
+    color: var(--mai-muted);
+    font-size: 11px;
+  }
+
+  .montagnettes-ai-module .mai-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .montagnettes-ai-module .mai-edit {
+    min-height: 54px;
+    padding: 0 20px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid var(--mai-pine);
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-restart {
+    min-height: 54px;
+    padding: 0 14px;
+    color: var(--mai-muted);
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-edit:hover {
+    color: var(--mai-white);
+    background: var(--mai-pine);
+  }
+
+  .montagnettes-ai-module .mai-dialog {
+    width: min(620px, calc(100vw - 30px));
+    padding: 0;
+    color: var(--mai-ink);
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.42), transparent 180px),
+      var(--mai-cream);
+    border: 1px solid rgba(163, 150, 112, 0.72);
+    border-radius: 18px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.36);
+  }
+
+  .montagnettes-ai-module .mai-dialog::backdrop {
+    background: rgba(45, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+  }
+
+  .montagnettes-ai-module .mai-criteria-form {
+    padding: 34px;
+  }
+
+  .montagnettes-ai-module .mai-dialog-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .montagnettes-ai-module .mai-close {
+    padding: 0 6px;
+    color: var(--mai-ink);
+    background: transparent;
+    border: 0;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-dialog-copy {
+    margin-top: 10px;
+  }
+
+  .montagnettes-ai-module .mai-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 22px;
+  }
+
+  .montagnettes-ai-module .mai-option {
+    position: relative;
+  }
+
+  .montagnettes-ai-module .mai-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .montagnettes-ai-module .mai-option span {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 14px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(163, 150, 112, 0.34);
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-option span::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    border: 1px solid #93a099;
+  }
+
+  .montagnettes-ai-module .mai-option input:checked + span {
+    color: var(--mai-pine);
+    background: #e4d8c7;
+    border-color: var(--mai-gold);
+  }
+
+  .montagnettes-ai-module .mai-option input:checked + span::before {
+    background: var(--mai-gold);
+    box-shadow: inset 0 0 0 4px #e4d8c7;
+  }
+
+  .montagnettes-ai-module .mai-apply {
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .montagnettes-ai-module .mai-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 700px) {
+    .montagnettes-ai-module .mai-input-row {
+      grid-template-columns: 1fr;
+    }
+
+    .montagnettes-ai-module .mai-context-switch {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+
+    .montagnettes-ai-module .mai-submit,
+    .montagnettes-ai-module .mai-edit,
+    .montagnettes-ai-module .mai-view {
+      width: 100%;
+    }
+
+    .montagnettes-ai-module .mai-suggestions > span {
+      width: 100%;
+    }
+
+    .montagnettes-ai-module .mai-actions {
+      flex-direction: column;
+    }
+
+    .montagnettes-ai-module .mai-options {
+      grid-template-columns: 1fr;
+    }
+
+    .montagnettes-ai-module .mai-criteria-form {
+      padding: 25px 20px;
+    }
+  }
+
+  /* Widget flottant Elementor */
+  .montagnettes-ai-module {
+    position: fixed;
+    z-index: 99998;
+    left: 22px;
+    bottom: 22px;
+    width: auto;
+    padding: 0;
+    color: var(--mai-ink);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .montagnettes-ai-module .mai-launcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 64px;
+    min-height: 64px;
+    justify-content: center;
+    gap: 11px;
+    padding: 6px 19px 6px 6px;
+    color: var(--mai-pine);
+    background:
+      linear-gradient(115deg, rgba(255, 255, 255, 0.48), transparent 42%),
+      #ffffff;
+    border: 1px solid rgba(78, 0, 0, 0.18);
+    border-radius: 34px;
+    box-shadow:
+      0 14px 38px rgba(45, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .montagnettes-ai-module .mai-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .montagnettes-ai-module .mai-launcher:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 23px 52px rgba(45, 0, 0, 0.36),
+      0 0 0 3px rgba(163, 150, 112, 0.16);
+  }
+
+  .montagnettes-ai-module .mai-launcher-person {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    color: var(--mai-pine);
+    background: #fbf8f2;
+    border: 1px solid rgba(78, 0, 0, 0.22);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px rgba(236, 230, 216, 0.8);
+  }
+
+  .montagnettes-ai-module .mai-launcher-person svg {
+    width: 38px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+  }
+
+  .montagnettes-ai-module .mai-launcher-person img,
+  .montagnettes-ai-module .mai-avatar img {
+    width: 58%;
+    height: auto;
+    display: block;
+  }
+
+  .montagnettes-ai-module .mai-launcher-text {
+    color: var(--mai-pine);
+    font-family: "Italiana", Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .montagnettes-ai-module .mai-chat {
+    position: absolute;
+    left: 0;
+    bottom: 76px;
+    width: min(410px, calc(100vw - 30px));
+    height: min(670px, calc(100vh - 115px));
+    display: none;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    color: var(--mai-ink);
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.72), transparent 200px),
+      #ffffff;
+    border: 1px solid rgba(78, 0, 0, 0.14);
+    border-radius: 3px;
+    box-shadow:
+      0 35px 90px rgba(45, 0, 0, 0.16),
+      0 0 0 1px rgba(255, 255, 255, 0.56) inset;
+    transform-origin: bottom left;
+    animation: mai-chat-open 0.24s ease both;
+  }
+
+  .montagnettes-ai-module .mai-toggle:checked ~ .mai-chat {
+    display: grid;
+  }
+
+  @keyframes mai-chat-open {
+    from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  }
+
+  .montagnettes-ai-module .mai-chat-header {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 18px;
+    color: var(--mai-ink);
+    background:
+      linear-gradient(120deg, rgba(255, 255, 255, 0.7), transparent 42%),
+      #ffffff;
+    border-bottom: 1px solid rgba(78, 0, 0, 0.13);
+  }
+
+  .montagnettes-ai-module .mai-avatar,
+  .montagnettes-ai-module .mai-mini-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    color: var(--mai-pine);
+    background: var(--mai-cream);
+    border-radius: 50%;
+  }
+
+  .montagnettes-ai-module .mai-avatar {
+    width: 46px;
+    height: 46px;
+    color: var(--mai-pine);
+    background: #fbf8f2;
+    border: 1px solid rgba(78, 0, 0, 0.28);
+  }
+
+  .montagnettes-ai-module .mai-chat-header > div {
+    min-width: 0;
+    display: grid;
+    gap: 3px;
+  }
+
+  .montagnettes-ai-module .mai-chat-header strong {
+    font-family: "Italiana", Georgia, serif;
+    color: var(--mai-pine);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  .montagnettes-ai-module .mai-chat-header div > span {
+    color: var(--mai-muted);
+    font-size: 10px;
+  }
+
+  .montagnettes-ai-module .mai-chat-header i {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    margin-right: 4px;
+    background: var(--mai-gold);
+    border-radius: 50%;
+  }
+
+  .montagnettes-ai-module .mai-minimize {
+    width: 34px;
+    height: 34px;
+    margin-left: auto;
+    display: grid;
+    place-items: center;
+    padding: 0 0 3px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid rgba(78, 0, 0, 0.12);
+    border-radius: 50%;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-language {
+    width: 48px;
+    height: 31px;
+    margin-left: auto;
+    padding: 0 7px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid rgba(78, 0, 0, 0.14);
+    border-radius: 16px;
+    outline: 0;
+    font: 600 9px "DM Sans", Arial, sans-serif;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-language + .mai-minimize {
+    margin-left: 0;
+  }
+
+  .montagnettes-ai-module .mai-chat-body {
+    min-height: 0;
+    overflow-y: auto;
+    padding: 24px 18px;
+    scrollbar-width: thin;
+    scrollbar-color: #bdc9c2 transparent;
+  }
+
+  .montagnettes-ai-module .mai-bot-line {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .montagnettes-ai-module .mai-mini-avatar {
+    width: 27px;
+    height: 27px;
+    color: var(--mai-pine);
+    background: var(--mai-cream);
+    border: 1px solid rgba(78, 0, 0, 0.28);
+    font-size: 10px;
+  }
+
+  .montagnettes-ai-module .mai-bubble {
+    max-width: calc(100% - 35px);
+    padding: 13px 15px;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .montagnettes-ai-module .mai-bubble-bot {
+    background: #f8f4ec;
+    border: 1px solid rgba(78, 0, 0, 0.1);
+    border-radius: 2px;
+    box-shadow: none;
+  }
+
+  .montagnettes-ai-module .mai-user-line {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+  }
+
+  .montagnettes-ai-module .mai-bubble-user {
+    max-width: 82%;
+    color: var(--mai-pine);
+    background: #ece6d8;
+    border: 1px solid rgba(78, 0, 0, 0.14);
+    border-radius: 2px;
+  }
+
+  .montagnettes-ai-module .mai-context-switch {
+    display: flex;
+    width: calc(100% - 35px);
+    margin: 12px 0 0 35px;
+    padding: 3px;
+    border-radius: 10px;
+  }
+
+  .montagnettes-ai-module .mai-context-switch button {
+    flex: 1;
+    min-height: 32px;
+    padding: 0 8px;
+    border-radius: 7px;
+  }
+
+  .montagnettes-ai-module .mai-suggestions {
+    margin: 10px 0 0 35px;
+    gap: 6px;
+  }
+
+  .montagnettes-ai-module .mai-suggestions button {
+    padding: 7px 9px;
+    background: var(--mai-white);
+    border-radius: 14px;
+    font-size: 9px;
+  }
+
+  .montagnettes-ai-module .mai-loading {
+    min-height: 80px;
+    margin: 14px 0 0 35px;
+    padding: 12px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--mai-white);
+  }
+
+  .montagnettes-ai-module .mai-spinner {
+    width: 24px;
+    height: 24px;
+  }
+
+  .montagnettes-ai-module .mai-results {
+    margin-top: 16px;
+    padding-top: 0;
+    border: 0;
+  }
+
+  .montagnettes-ai-module .mai-result-title {
+    margin: 0 0 10px;
+    color: var(--mai-pine);
+    font-weight: 600;
+  }
+
+  .montagnettes-ai-module .mai-result-content {
+    width: calc(100% - 35px);
+    max-width: calc(100% - 35px);
+  }
+
+  .montagnettes-ai-module .mai-persona {
+    margin: 0 0 12px;
+    padding: 10px 11px;
+  }
+
+  .montagnettes-ai-module .mai-persona-name {
+    font-size: 11px;
+  }
+
+  .montagnettes-ai-module .mai-persona-summary {
+    font-size: 10px;
+  }
+
+  .montagnettes-ai-module .mai-criteria {
+    gap: 5px;
+    margin: 10px 0;
+  }
+
+  .montagnettes-ai-module .mai-criterion {
+    padding: 6px 8px;
+    border-radius: 12px;
+    font-size: 9px;
+  }
+
+  .montagnettes-ai-module .mai-control-note {
+    margin: 8px 0 0;
+    font-size: 9px;
+  }
+
+  .montagnettes-ai-module .mai-actions {
+    margin: 9px 0 0 35px;
+    gap: 7px;
+  }
+
+  .montagnettes-ai-module .mai-edit,
+  .montagnettes-ai-module .mai-view,
+  .montagnettes-ai-module .mai-restart {
+    min-height: 40px;
+    padding: 0 12px;
+    border-radius: 12px;
+    font-size: 10px;
+  }
+
+  .montagnettes-ai-module .mai-restart {
+    padding: 0 5px;
+    border-radius: 0;
+  }
+
+  .montagnettes-ai-module .mai-search-form {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 43px;
+    gap: 8px;
+    padding: 13px;
+    background: #ffffff;
+    border-top: 1px solid rgba(163, 150, 112, 0.38);
+  }
+
+  .montagnettes-ai-module .mai-privacy {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--mai-muted);
+    text-align: center;
+    font-size: 7px;
+    line-height: 1.4;
+  }
+
+  .montagnettes-ai-module .mai-privacy a {
+    color: var(--mai-pine);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .montagnettes-ai-module .mai-inline-link {
+    display: inline-block;
+    margin-top: 7px;
+    color: var(--mai-pine);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .montagnettes-ai-module .mai-dynamic-question {
+    margin: 0 0 9px;
+    color: var(--mai-pine);
+    font-family: "Italiana", Georgia, serif;
+    font-size: 14px;
+  }
+
+  .montagnettes-ai-module .mai-dynamic-options {
+    display: grid;
+    gap: 5px;
+  }
+
+  .montagnettes-ai-module .mai-dynamic-options button {
+    min-height: 34px;
+    padding: 6px 10px;
+    color: var(--mai-pine);
+    background: var(--mai-cream);
+    border: 1px solid rgba(78, 0, 0, 0.13);
+    border-radius: 17px;
+    text-align: left;
+    font-size: 9px;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-dynamic-options button:hover {
+    background: #e2d5c3;
+    border-color: var(--mai-gold);
+  }
+
+  .montagnettes-ai-module .mai-input {
+    min-height: 43px;
+    max-height: 90px;
+    resize: none;
+    padding: 12px 13px;
+    background: #f8f4ec;
+    border: 1px solid rgba(163, 150, 112, 0.26);
+    border-radius: 22px;
+    font-size: 11px;
+  }
+
+  .montagnettes-ai-module .mai-submit {
+    width: 43px;
+    min-height: 43px;
+    padding: 0;
+    color: var(--mai-pine);
+    background: var(--mai-cream);
+    border-color: rgba(78, 0, 0, 0.22);
+    border-radius: 50%;
+  }
+
+  .montagnettes-ai-module .mai-dialog {
+    z-index: 99999;
+  }
+
+  .montagnettes-ai-module .mai-concierge {
+    position: fixed;
+    z-index: 99990;
+    right: 24px;
+    bottom: 24px;
+    width: min(365px, calc(100vw - 30px));
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    padding: 24px;
+    color: var(--mai-ink);
+    background: #ffffff;
+    border: 1px solid rgba(78, 0, 0, 0.14);
+    box-shadow: 0 25px 70px rgba(45, 0, 0, 0.14);
+  }
+
+  .montagnettes-ai-module .mai-concierge-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(78, 0, 0, 0.12);
+  }
+
+  .montagnettes-ai-module .mai-concierge-monogram {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    color: var(--mai-pine);
+    border: 1px solid rgba(78, 0, 0, 0.24);
+    border-radius: 50%;
+    font: 400 21px "Italiana", Georgia, serif;
+  }
+
+  .montagnettes-ai-module .mai-concierge-head small {
+    color: var(--mai-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 7px;
+  }
+
+  .montagnettes-ai-module .mai-concierge-head h2 {
+    margin: 2px 0 0;
+    color: var(--mai-pine);
+    font: 400 22px "Italiana", Georgia, serif;
+  }
+
+  .montagnettes-ai-module .mai-concierge-intro {
+    margin: 16px 0;
+    color: var(--mai-muted);
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .montagnettes-ai-module .mai-concierge-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .montagnettes-ai-module .mai-concierge-actions button,
+  .montagnettes-ai-module .mai-generate-email,
+  .montagnettes-ai-module .mai-copy-email {
+    min-height: 38px;
+    padding: 7px 8px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid rgba(78, 0, 0, 0.17);
+    border-radius: 20px;
+    font-size: 8px;
+    line-height: 1.25;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-concierge-actions button:hover,
+  .montagnettes-ai-module .mai-generate-email:hover {
+    background: #e2d5c3;
+    border-color: var(--mai-gold);
+  }
+
+  .montagnettes-ai-module .mai-concierge-response {
+    min-height: 60px;
+    margin: 12px 0 17px;
+    padding: 12px;
+    color: var(--mai-muted);
+    background: #f8f4ec;
+    border-left: 2px solid var(--mai-gold);
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .montagnettes-ai-module .mai-concierge-response a {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--mai-pine);
+    font-weight: 600;
+  }
+
+  .montagnettes-ai-module .mai-offer-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 9px;
+  }
+
+  .montagnettes-ai-module .mai-add-offer,
+  .montagnettes-ai-module .mai-remove-cart {
+    min-height: 31px;
+    padding: 0 10px;
+    color: var(--mai-pine);
+    background: transparent;
+    border: 1px solid rgba(78, 0, 0, 0.16);
+    border-radius: 16px;
+    font-size: 8px;
+    cursor: pointer;
+  }
+
+  .montagnettes-ai-module .mai-add-offer:hover {
+    background: #e2d5c3;
+    border-color: var(--mai-gold);
+  }
+
+  .montagnettes-ai-module .mai-concierge-cart {
+    margin: 0 0 17px;
+    padding: 12px;
+    background: #f8f4ec;
+    border: 1px solid rgba(78, 0, 0, 0.1);
+  }
+
+  .montagnettes-ai-module .mai-concierge-cart > p {
+    margin: 0 0 8px;
+    color: var(--mai-pine);
+    font: 400 13px "Italiana", Georgia, serif;
+  }
+
+  .montagnettes-ai-module .mai-cart-items {
+    display: grid;
+    gap: 6px;
+  }
+
+  .montagnettes-ai-module .mai-cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--mai-muted);
+    font-size: 9px;
+  }
+
+  .montagnettes-ai-module .mai-cart-empty {
+    color: var(--mai-muted);
+    font-size: 8px;
+  }
+
+  .montagnettes-ai-module .mai-email-tool {
+    padding-top: 16px;
+    border-top: 1px solid rgba(78, 0, 0, 0.12);
+  }
+
+  .montagnettes-ai-module .mai-email-tool > p {
+    margin: 0 0 10px;
+    color: var(--mai-pine);
+    font: 400 15px "Italiana", Georgia, serif;
+  }
+
+  .montagnettes-ai-module .mai-email-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+
+  .montagnettes-ai-module .mai-email-tool select,
+  .montagnettes-ai-module .mai-email-name,
+  .montagnettes-ai-module .mai-email-output {
+    width: 100%;
+    padding: 10px;
+    color: var(--mai-ink);
+    background: #fff;
+    border: 1px solid rgba(78, 0, 0, 0.14);
+    border-radius: 0;
+    outline: 0;
+    font-size: 9px;
+  }
+
+  .montagnettes-ai-module .mai-email-name {
+    margin-top: 7px;
+  }
+
+  .montagnettes-ai-module .mai-generate-email,
+  .montagnettes-ai-module .mai-copy-email {
+    width: 100%;
+    margin-top: 7px;
+  }
+
+  .montagnettes-ai-module .mai-email-output {
+    margin-top: 8px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+
+  .montagnettes-ai-module .mai-copy-email:disabled {
+    cursor: default;
+    opacity: 0.45;
+  }
+
+  .montagnettes-ai-module .mai-human-note {
+    margin: 13px 0 0;
+    color: var(--mai-muted);
+    text-align: center;
+    font-size: 7px;
+  }
+
+  @media (max-width: 500px) {
+    .montagnettes-ai-module {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+    }
+
+    .montagnettes-ai-module .mai-launcher {
+      width: 58px;
+      height: 58px;
+      min-height: 58px;
+      padding: 5px;
+    }
+
+    .montagnettes-ai-module .mai-launcher-text {
+      display: none;
+    }
+
+    .montagnettes-ai-module .mai-launcher-person {
+      width: 48px;
+      height: 48px;
+    }
+
+    .montagnettes-ai-module .mai-chat {
+      position: fixed;
+      right: 10px;
+      bottom: 80px;
+      left: 10px;
+      width: auto;
+      height: min(610px, calc(100vh - 100px));
+    }
+
+    .montagnettes-ai-module .mai-page-concierge-link {
+      right: 12px;
+      bottom: 12px;
+      min-width: 150px;
+      padding: 12px 15px;
+      font-size: 15px;
+    }
+
+    .montagnettes-ai-module .mai-concierge-qr {
+      display: none;
+    }
+
+    .montagnettes-ai-module .mai-concierge {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      bottom: 88px;
+      left: 10px;
+      width: auto;
+      display: none;
+    }
+
+    .montagnettes-ai-module .mai-context-switch {
+      display: flex;
+      grid-template-columns: none;
+    }
+  }

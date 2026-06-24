@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conciergerie équipe — Les Montagnettes</title>
+    <link rel="stylesheet" href="conciergerie-equipe.css" />
+    <script src="conciergerie-equipe.js" defer></script>
+  </head>
+  <body>
+    <main class="staff-module">
+      <header class="staff-header">
+        <div>
+          <p>Outil interne · Équipe hôtelière</p>
+          <h1>Conciergerie IA</h1>
+        </div>
+        <span>Validation humaine obligatoire</span>
+      </header>
+
+      <section class="staff-card">
+        <div class="staff-grid">
+          <label>
+            Hôtel
+            <select id="staff-hotel">
+              <option>La Villa Caroline</option>
+              <option>Parc Victoria</option>
+              <option>Hôtel Excelsior Chamonix</option>
+            </select>
+          </label>
+          <label>
+            Moment
+            <select id="staff-moment">
+              <option value="before">Avant le séjour</option>
+              <option value="during">Pendant le séjour</option>
+              <option value="after">Après le séjour</option>
+            </select>
+          </label>
+          <label>
+            Langue
+            <select id="staff-language">
+              <option value="fr">Français</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </label>
+          <label>
+            Prénom du client
+            <input id="staff-name" type="text" maxlength="60" placeholder="Ex. Sophie" />
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Services à proposer</legend>
+          <label><input type="checkbox" value="spa" /> Spa</label>
+          <label><input type="checkbox" value="restaurant" /> Restaurant</label>
+          <label><input type="checkbox" value="activity" /> Activité locale</label>
+          <label><input type="checkbox" value="transfer" /> Transfert</label>
+        </fieldset>
+
+        <label>
+          Notes utiles
+          <textarea id="staff-notes" rows="3" placeholder="Préférences, occasion, contraintes…"></textarea>
+        </label>
+
+        <button id="staff-generate" type="button">Générer une proposition d’email</button>
+
+        <label>
+          Email à relire et valider
+          <textarea id="staff-output" rows="12" readonly></textarea>
+        </label>
+
+        <div class="staff-actions">
+          <button id="staff-copy" type="button" disabled>Copier l’email</button>
+          <button id="staff-reset" type="button">Réinitialiser</button>
+        </div>
+
+        <p class="staff-notice">
+          Cet outil prépare un brouillon. Un membre de l’équipe doit toujours
+          relire, adapter et valider le message avant envoi.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!--
+  MODULE IA LES MONTAGNETTES
+  HTML du widget Elementor.
+
+  Personnalisation rapide :
+  - URL des résultats : modifier data-results-url
+  - Couleurs : modifier les variables dans chatbot.css
+  - En production, remplacer les chemins chatbot.css et chatbot.js
+    par leurs URL absolues WordPress.
+-->
+
+<meta charset="UTF-8">
+<link rel="icon" href="data:,">
+
+<div
+  class="montagnettes-ai-module"
+  data-results-url="/hebergements/"
+  data-api-url="/wp-json/montagnettes/v1/analyze"
+  data-contact-url="/contact/"
+  data-booking-url="/reservation/"
+  data-spa-url="/spa/"
+  data-restaurant-url="/restaurant/"
+  data-checkin-url="/check-in/"
+  data-privacy-url="/politique-de-confidentialite/"
+  data-concierge-url="conciergerie-client.html"
+>
+  <a class="mai-page-concierge-link" href="conciergerie-client.html">
+    <span>Votre séjour</span>
+    La conciergerie
+  </a>
+
+  <aside class="mai-concierge-qr" aria-label="Accès rapide à la conciergerie">
+    <div class="mai-concierge-qr-copy">
+      <span>Sur place</span>
+      <strong>Scannez la conciergerie</strong>
+      <p>Accédez au carnet de séjour depuis votre mobile.</p>
+    </div>
+    <a class="mai-concierge-qr-link" href="conciergerie-client.html">
+      <img
+        class="mai-concierge-qr-img"
+        src=""
+        alt="QR code vers la conciergerie"
+        width="108"
+        height="108"
+        loading="lazy"
+      >
+    </a>
+  </aside>
+
+  <input
+    id="mai-chat-toggle"
+    class="mai-toggle"
+    type="checkbox"
+    tabindex="-1"
+  >
+  <label
+    class="mai-launcher"
+    for="mai-chat-toggle"
+    role="button"
+    tabindex="0"
+    aria-label="Ouvrir l’assistant de séjour"
+  >
+    <span class="mai-launcher-person" aria-hidden="true">
+      <img src="assets/logomontagnettes.svg" alt="">
+    </span>
+    <span class="mai-launcher-text">Besoin d’aide&nbsp;?</span>
+  </label>
+
+  <section class="mai-chat" aria-label="Assistant de séjour">
+    <header class="mai-chat-header">
+      <span class="mai-avatar" aria-hidden="true">
+        <img src="assets/logomontagnettes.svg" alt="">
+      </span>
+      <div>
+        <strong>Assistant Les Montagnettes</strong>
+        <span class="mai-status"><i></i> Initialisation...</span>
+      </div>
+      <select class="mai-language" aria-label="Langue du chatbot">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
+      <label
+        class="mai-minimize"
+        for="mai-chat-toggle"
+        role="button"
+        tabindex="0"
+        aria-label="Réduire le chat"
+      >×</label>
+    </header>
+
+    <div class="mai-chat-body">
+      <div class="mai-bot-line">
+        <span class="mai-mini-avatar" aria-hidden="true">✦</span>
+        <div class="mai-bubble mai-bubble-bot">
+          Bonjour&nbsp;! Je suis l’assistant IA des Montagnettes. Je peux vous
+          conseiller, préparer une demande de séjour ou vous orienter vers notre équipe.
+        </div>
+      </div>
+
+      <div class="mai-services" aria-label="Services de l’assistant">
+        <button type="button" data-service="booking">Disponibilités</button>
+        <button type="button" data-service="faq">Questions fréquentes</button>
+        <button type="button" data-service="spa">Spa & restaurant</button>
+        <button type="button" data-service="checkin">Check-in mobile</button>
+        <button type="button" data-service="human">Parler à l’équipe</button>
+      </div>
+
+      <div class="mai-guide">
+        <div class="mai-selection-summary" hidden>
+          <span>Votre sélection</span>
+          <div class="mai-selection-chips"></div>
+        </div>
+
+        <div class="mai-guide-step is-active" data-step="persona">
+          <p class="mai-guide-question">Pour quel type de séjour&nbsp;?</p>
+          <div class="mai-choice-grid">
+            <button type="button" data-guide="persona" data-value="business" data-label="Déplacement professionnel">💼 Business</button>
+            <button type="button" data-guide="persona" data-value="couple" data-label="Séjour en couple">♡ Couple</button>
+            <button type="button" data-guide="persona" data-value="senior" data-label="Séjour confortable pour retraité actif">♜ Retraité actif</button>
+            <button type="button" data-guide="persona" data-value="family" data-label="Séjour en famille">⌂ Famille</button>
+          </div>
+        </div>
+
+        <div class="mai-guide-step" data-step="room">
+          <p class="mai-guide-question">Quel hébergement préférez-vous&nbsp;?</p>
+          <div class="mai-choice-grid">
+            <button type="button" data-guide="room" data-value="hotel" data-label="une chambre d’hôtel">Chambre d’hôtel</button>
+            <button type="button" data-guide="room" data-value="apartment" data-label="un appartement">Appartement</button>
+            <button type="button" data-guide="room" data-value="residence" data-label="une résidence hôtelière">Résidence</button>
+            <button type="button" data-guide="room" data-value="chalet" data-label="un chalet">Chalet</button>
+          </div>
+        </div>
+
+        <div class="mai-guide-step" data-step="destination">
+          <p class="mai-guide-question">Quel hôtel souhaitez-vous découvrir&nbsp;?</p>
+          <div class="mai-choice-grid">
+            <button type="button" data-guide="destination" data-value="villa-caroline" data-label="à La Villa Caroline">La Villa Caroline</button>
+            <button type="button" data-guide="destination" data-value="parc-victoria" data-label="au Parc Victoria, Pays basque">Parc Victoria</button>
+            <button type="button" data-guide="destination" data-value="excelsior-chamonix" data-label="à l’Hôtel Excelsior, Chamonix">Hôtel Excelsior</button>
+            <button type="button" data-guide="destination" data-value="flexible" data-label="dans l’hôtel le plus adapté">Me conseiller</button>
+          </div>
+        </div>
+
+        <div class="mai-guide-step" data-step="moment">
+          <p class="mai-guide-question">Quand se déroule le séjour&nbsp;?</p>
+          <div class="mai-choice-grid">
+            <button type="button" data-guide="moment" data-value="weekday" data-label="en semaine, pour un séjour loisirs">En semaine · Loisirs</button>
+            <button type="button" data-guide="moment" data-value="weekend" data-label="le week-end, pour un séjour business">Week-end · Business</button>
+          </div>
+        </div>
+
+        <div class="mai-guide-step" data-step="priorities">
+          <p class="mai-guide-question">Qu’est-ce qui compte le plus&nbsp;?</p>
+          <p class="mai-guide-help">Plusieurs choix possibles</p>
+          <div class="mai-choice-grid mai-multi-choices">
+            <button type="button" data-priority="parking">Parking</button>
+            <button type="button" data-priority="wifi">Wi-Fi</button>
+            <button type="button" data-priority="spa">Spa</button>
+            <button type="button" data-priority="ski">Proche des pistes</button>
+            <button type="button" data-priority="breakfast">Petit-déjeuner</button>
+            <button type="button" data-priority="view">Vue montagne</button>
+            <button type="button" data-priority="kids">Adapté aux enfants</button>
+            <button type="button" data-priority="invoice">Facture entreprise</button>
+          </div>
+          <button class="mai-guide-continue" type="button">Voir ma sélection</button>
+        </div>
+      </div>
+
+      <div class="mai-loading" hidden>
+        <span class="mai-spinner"></span>
+        <p>J’analyse votre demande...</p>
+      </div>
+
+      <section class="mai-results" hidden aria-live="polite">
+        <div class="mai-bot-line">
+          <span class="mai-mini-avatar" aria-hidden="true">✦</span>
+          <div class="mai-bubble mai-bubble-bot mai-result-content">
+            <p class="mai-result-title">Voici ce que j’ai compris&nbsp;:</p>
+            <div class="mai-persona">
+              <strong class="mai-persona-name"></strong>
+              <p class="mai-persona-summary"></p>
+            </div>
+            <div class="mai-criteria"></div>
+            <p class="mai-control-note">
+              Vous pouvez modifier ces critères avant de continuer.
+            </p>
+          </div>
+        </div>
+
+        <div class="mai-actions">
+          <button class="mai-restart" type="button">Recommencer</button>
+          <button class="mai-edit" type="button">Modifier</button>
+          <a class="mai-view" href="/hebergements/">Voir les hébergements</a>
+        </div>
+      </section>
+    </div>
+
+    <form class="mai-search-form">
+      <label class="mai-sr-only" for="mai-dream-elementor">
+        Décrivez votre séjour idéal
+      </label>
+      <textarea
+        id="mai-dream-elementor"
+        class="mai-input"
+        rows="1"
+        maxlength="240"
+        placeholder="Écrivez votre demande..."
+      ></textarea>
+      <button class="mai-submit" type="submit" aria-label="Envoyer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6"></path>
+        </svg>
+      </button>
+      <p class="mai-privacy">
+        Assistant IA · Ne partagez pas de données sensibles.
+        <a class="mai-privacy-link" href="/politique-de-confidentialite/">Confidentialité</a>
+      </p>
+    </form>
+  </section>
+
+  <dialog class="mai-dialog">
+    <form class="mai-criteria-form">
+      <div class="mai-dialog-head">
+        <div><p class="mai-eyebrow">Affinez votre recherche</p><h3>Vos critères</h3></div>
+        <button class="mai-close" type="button" aria-label="Fermer">×</button>
+      </div>
+      <div class="mai-options"></div>
+      <button class="mai-apply" type="submit">Appliquer mes choix</button>
+    </form>
+  </dialog>
+</div>
+<link rel="stylesheet" href="./chatbot.css?v=20260623-1600">
+<script src="./chatbot.js?v=20260623-1800" charset="UTF-8" defer></script>

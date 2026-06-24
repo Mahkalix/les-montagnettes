@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ece6d8" />
+    <title>Votre séjour — Les Montagnettes</title>
+    <link rel="stylesheet" href="conciergerie-client.css" />
+    <script src="conciergerie-client.js" defer></script>
+  </head>
+  <body>
+    <main
+      class="guest-concierge"
+      data-spa-url="/spa/"
+      data-restaurant-url="/restaurant/"
+      data-activities-url="/activites/"
+      data-contact-url="/contact/"
+    >
+      <header class="guest-header">
+        <div class="guest-brand">
+          <span class="guest-monogram">M</span>
+          <div>
+            <small>Les Montagnettes</small>
+            <strong>Votre séjour</strong>
+          </div>
+        </div>
+        <select id="guest-language" aria-label="Langue">
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+        </select>
+      </header>
+
+      <section class="guest-welcome">
+        <p class="guest-kicker">Bienvenue aux Montagnettes</p>
+        <h1>Le carnet de votre séjour.</h1>
+        <p class="guest-intro">
+          Nos bonnes adresses, nos soins et nos idées pour profiter de chaque moment.
+        </p>
+      </section>
+
+      <nav class="guest-services" aria-label="Services de conciergerie">
+        <button type="button" data-guest-service="spa">
+          <strong>Le spa</strong><small>Soins et rituels</small>
+        </button>
+        <button type="button" data-guest-service="restaurant">
+          <strong>La table</strong><small>Dîner et saveurs</small>
+        </button>
+        <button type="button" data-guest-service="activities">
+          <strong>Découvrir</strong><small>Balades et expériences</small>
+        </button>
+        <button type="button" data-guest-service="team">
+          <strong>La réception</strong><small>À votre écoute</small>
+        </button>
+      </nav>
+
+      <section class="guest-panel" aria-live="polite">
+        <div class="guest-panel-empty">
+          Choisissez une rubrique pour consulter notre sélection.
+        </div>
+      </section>
+
+      <section class="guest-selection">
+        <div>
+          <p>Mon carnet</p>
+          <span class="guest-count">0 sélection</span>
+        </div>
+        <div class="guest-items">
+          <p class="guest-empty">Aucun souhait ajouté.</p>
+        </div>
+        <button class="guest-send" type="button" disabled>
+          Transmettre à la réception
+        </button>
+      </section>
+
+      <footer>
+        <p>Chaque souhait est confirmé personnellement par la réception.</p>
+        <a href="/politique-de-confidentialite/">Confidentialité</a>
+      </footer>
+    </main>
+  </body>
+</html>

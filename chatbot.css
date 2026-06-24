@@ -83,7 +83,7 @@ body {
     place-items: center;
     color: var(--mai-white);
     background: var(--mai-pine);
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   .montagnettes-ai-module .mai-eyebrow {
@@ -263,7 +263,7 @@ body {
     color: var(--mai-pine);
     background: var(--mai-cream);
     border: 1px solid rgba(78, 0, 0, 0.13);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 8px;
   }
 
@@ -276,7 +276,7 @@ body {
     color: var(--mai-pine);
     background: transparent;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0;
     cursor: pointer;
   }
 
@@ -293,7 +293,7 @@ body {
     color: var(--mai-pine);
     background: transparent;
     border: 1px solid rgba(78, 0, 0, 0.16);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 9px;
     cursor: pointer;
   }
@@ -396,7 +396,7 @@ body {
     color: var(--mai-pine);
     background: rgba(255, 255, 255, 0.62);
     border: 1px solid rgba(78, 0, 0, 0.15);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 10px;
     line-height: 1.25;
     cursor: pointer;
@@ -419,7 +419,7 @@ body {
     color: var(--mai-pine);
     background: transparent;
     border: 1px solid var(--mai-pine);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 10px;
     font-weight: 600;
     cursor: pointer;
@@ -451,7 +451,7 @@ body {
     height: 32px;
     border: 1px solid #ccd8d0;
     border-top-color: var(--mai-pine);
-    border-radius: 5px;
+    border-radius: 0;
     animation: mai-elementor-spin 0.8s linear infinite;
   }
 
@@ -577,7 +577,7 @@ body {
       linear-gradient(rgba(255, 255, 255, 0.42), transparent 180px),
       var(--mai-cream);
     border: 1px solid rgba(163, 150, 112, 0.72);
-    border-radius: 5px;
+    border-radius: 0;
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.36);
   }
 
@@ -636,7 +636,7 @@ body {
     padding: 0 14px;
     background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(163, 150, 112, 0.34);
-    border-radius: 5px;
+    border-radius: 0;
     cursor: pointer;
   }
 
@@ -737,7 +737,7 @@ body {
     color: var(--mai-pine);
     background: rgba(250, 248, 244, 0.96);
     border: 1px solid rgba(78, 0, 0, 0.24);
-    border-radius: 2px;
+    border-radius: 0;
     box-shadow:
       0 14px 38px rgba(19, 39, 63, 0.18),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -768,7 +768,7 @@ body {
     color: var(--mai-pine);
     background: var(--mai-bordeaux);
     border: 1px solid rgba(78, 0, 0, 0.22);
-    border-radius: 1px;
+    border-radius: 0;
     box-shadow: none;
   }
 
@@ -809,7 +809,7 @@ body {
     color: var(--mai-ink);
     background: var(--mai-ivory);
     border: 1px solid rgba(78, 0, 0, 0.22);
-    border-radius: 1px;
+    border-radius: 0;
     box-shadow:
       0 35px 90px rgba(19, 39, 63, 0.23),
       0 0 0 1px rgba(255, 255, 255, 0.56) inset;
@@ -843,7 +843,7 @@ body {
     flex: 0 0 auto;
     color: var(--mai-pine);
     background: var(--mai-cream);
-    border-radius: 1px;
+    border-radius: 0;
   }
 
   .montagnettes-ai-module .mai-avatar {
@@ -879,7 +879,7 @@ body {
     display: inline-block;
     margin-right: 4px;
     background: var(--mai-gold);
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   .montagnettes-ai-module .mai-minimize {
@@ -892,7 +892,7 @@ body {
     color: var(--mai-pine);
     background: transparent;
     border: 1px solid rgba(78, 0, 0, 0.12);
-    border-radius: 5px;
+    border-radius: 0;
     font-family: var(--mai-sans);
     font-size: 22px;
     line-height: 1;
@@ -907,7 +907,7 @@ body {
     color: var(--mai-pine);
     background: transparent;
     border: 1px solid rgba(78, 0, 0, 0.14);
-    border-radius: 5px;
+    border-radius: 0;
     outline: 0;
     font: 600 9px var(--mai-sans);
     cursor: pointer;
@@ -950,7 +950,7 @@ body {
   .montagnettes-ai-module .mai-bubble-bot {
     background: #f8f4ec;
     border: 1px solid rgba(78, 0, 0, 0.1);
-    border-radius: 2px;
+    border-radius: 0;
     box-shadow: none;
   }
 
@@ -965,7 +965,7 @@ body {
     color: var(--mai-pine);
     background: #ece6d8;
     border: 1px solid rgba(78, 0, 0, 0.14);
-    border-radius: 2px;
+    border-radius: 0;
   }
 
   .montagnettes-ai-module .mai-context-switch {
@@ -973,14 +973,14 @@ body {
     width: calc(100% - 35px);
     margin: 12px 0 0 35px;
     padding: 3px;
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   .montagnettes-ai-module .mai-context-switch button {
     flex: 1;
     min-height: 32px;
     padding: 0 8px;
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   .montagnettes-ai-module .mai-suggestions {
@@ -991,7 +991,7 @@ body {
   .montagnettes-ai-module .mai-suggestions button {
     padding: 7px 9px;
     background: var(--mai-white);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 9px;
   }
 
@@ -1000,7 +1000,7 @@ body {
     margin: 14px 0 0 35px;
     padding: 12px;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0;
     background: var(--mai-white);
   }
 
@@ -1046,7 +1046,7 @@ body {
 
   .montagnettes-ai-module .mai-criterion {
     padding: 6px 8px;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 9px;
   }
 
@@ -1065,7 +1065,7 @@ body {
   .montagnettes-ai-module .mai-restart {
     min-height: 40px;
     padding: 0 12px;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 10px;
   }
 
@@ -1126,7 +1126,7 @@ body {
     color: var(--mai-pine);
     background: var(--mai-cream);
     border: 1px solid rgba(78, 0, 0, 0.13);
-    border-radius: 5px;
+    border-radius: 0;
     text-align: left;
     font-size: 9px;
     cursor: pointer;
@@ -1144,7 +1144,7 @@ body {
     padding: 12px 13px;
     background: #f8f4ec;
     border: 1px solid rgba(163, 150, 112, 0.26);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 11px;
   }
 
@@ -1155,7 +1155,7 @@ body {
     color: var(--mai-pine);
     background: var(--mai-cream);
     border-color: rgba(78, 0, 0, 0.22);
-    border-radius: 5px;
+    border-radius: 0;
   }
 
   .montagnettes-ai-module .mai-dialog {
@@ -1192,7 +1192,7 @@ body {
     place-items: center;
     color: var(--mai-pine);
     border: 1px solid rgba(78, 0, 0, 0.24);
-    border-radius: 5px;
+    border-radius: 0;
     font: 400 21px var(--mai-display);
   }
 
@@ -1230,7 +1230,7 @@ body {
     color: var(--mai-pine);
     background: transparent;
     border: 1px solid rgba(78, 0, 0, 0.17);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 8px;
     line-height: 1.25;
     cursor: pointer;
@@ -1273,7 +1273,7 @@ body {
     color: var(--mai-pine);
     background: transparent;
     border: 1px solid rgba(78, 0, 0, 0.16);
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 8px;
     cursor: pointer;
   }
